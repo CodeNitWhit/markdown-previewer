@@ -9,6 +9,14 @@ body {
     background-color:#7b84d1;
 }
 
+button {
+    background-color: transparent;
+    border:none;
+    outline:none;
+    border-radius:20%;
+    transition-duration: 0.4s;
+}
+
 .tile {
     border-style:none;
     background-color: #d3d6f2;
@@ -61,7 +69,7 @@ body {
 }
 
 #container {
-    
+    z-index:0;
 }
 
 #editor {
@@ -71,6 +79,63 @@ body {
 #preview {
     
 }
+
+.tile-title {
+    font-family: 'YuseiMagic-Regular';
+    font-size:20px;
+    padding:0;
+    margin:0;
+    text-align:center;
+    transform:translate(0, -100%);
+}
+
+.grid-container {
+
+}
+
+#editor-grid {
+
+}
+
+#preview-grid {
+
+}
+
+
+
+
+/*--SETTINGS BOX--*/
+
+#settings-box {
+    height:40vh;
+    width: 350px;
+    position:fixed;
+    top: 50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    z-index:1;
+    background-color:#d3d6f2;
+    border-style:solid;
+    border-color: #7b84d1;
+    border-width:10px;
+    border-radius:4%;
+    display:flex;
+}
+
+#setting-title {
+    text-align:center;
+    margin:0 auto;
+    font-family: 'YuseiMagic-Regular';
+}
+
+#exit-btn {
+    position:absolute;
+    top:5px;
+    right:5px;
+    color:darkgrey;
+    font-size:20px;
+}
+
 
 /*--FOOTER--*/
 footer {

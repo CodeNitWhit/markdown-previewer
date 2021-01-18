@@ -15,13 +15,27 @@
 <body>
     <h1 id="title">Markdown Live Previewer</h1>
     <div id="container">
-        <div id="editor" class="tile"></div>
-        <div id="preview" class="tile"></div>
+        <div id="editor" class="tile">
+            <h2 class="tile-title">Editor</h2>
+            <div id="editor-grid" class="grid-container">
+
+            </div>
+        </div>
+        <div id="preview" class="tile">
+            <h2 class="tile-title">Preview</h2>
+            <div id="preview-grid" class="grid-container">
+
+            </div>
+        </div>
+    </div>
+    <div id="settings-box">
+        <h1 id="setting-title">Settings</h1>
+        <button id="exit-btn">X</button>
     </div>
 </body>
 <footer>
-    <i class="fas fa-cog footer-icon"></i>
-    <i class="fas fa-download footer-icon"></i>
-    <i class="fab fa-github footer-icon"></i>
+    <button id="settings-button" class="fas fa-cog footer-icon"></button>
+    <button id="download-button" class="fas fa-download footer-icon"></button>
+    <button id="github-button" class="fab fa-github footer-icon"></button>
 </footer>
 </html>
