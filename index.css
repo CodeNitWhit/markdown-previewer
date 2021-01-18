@@ -1,0 +1,93 @@
+@font-face {
+    font-family: 'YuseiMagic-Regular';
+    src: url('YuseiMagic-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color:#7b84d1;
+}
+
+.tile {
+    border-style:none;
+    background-color: #d3d6f2;
+    border-radius:3%;
+}
+
+/*--TITLE/HEADER--*/
+#title {
+    text-align:center;
+    color:#d3d6f2;
+    text-shadow:2px 2px black;
+    height:7vh;
+    margin:0;
+    font-family: 'YuseiMagic-Regular';
+}
+
+/*--BODY--*/
+@media (orientation:landscape) {
+    #container {
+        display:flex;
+        flex-direction:row;
+        justify-content:space-around;
+    }
+    #editor {
+        width: 47vw;
+        height:83vh;
+    }
+    #preview {
+        width: 47vw;
+        height:83vh;
+    }
+}
+
+@media (orientation:portrait) {
+    #container {
+        display:flex;
+        flex-direction:column;
+    }
+    #editor {
+        width: 90vw;
+        height:40vh;
+        margin:0 auto;
+    }
+    #preview {
+        width: 90vw;
+        height:40vh;
+        margin:0 auto;
+        margin-top:2vh;
+    }
+}
+
+#container {
+    
+}
+
+#editor {
+    
+}
+
+#preview {
+    
+}
+
+/*--FOOTER--*/
+footer {
+    width:100vw;
+    height:8vh;
+    position:fixed;
+    bottom:0;
+    left:0;
+    background-color:#131a59;
+    box-shadow: 3px 3px 50px 10px #7b84d1 inset;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-evenly;
+    align-items:center;
+}
+
+.footer-icon {
+    color: #d3d6f2;
+    font-size: 5vh;
+}
