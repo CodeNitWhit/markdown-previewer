@@ -12,7 +12,7 @@ body {
 .tile {
     border-style:none;
     background-color: #d3d6f2;
-    border-radius:3%;
+    border-radius:1%;
 }
 
 /*--TITLE/HEADER--*/
