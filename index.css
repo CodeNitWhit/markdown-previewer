@@ -57,12 +57,12 @@ button {
     }
     #editor {
         width: 90vw;
-        height:40vh;
+        height:38vh;
         margin:0 auto;
     }
     #preview {
         width: 90vw;
-        height:40vh;
+        height:38vh;
         margin:0 auto;
         margin-top:2vh;
     }
