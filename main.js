@@ -57,11 +57,18 @@ function highlightLine(l) {
 }*/
 
 function editorHandling(l) {
+    autoGrowTextArea();
     getLinesArray();
     setGutterArray();
     displayGutter();
     //setCurrentLine(l);
     //alert(lines.length + " " + lines[(lines.length-1) + "\r" + currentGutter.length + " " + currentGutter[(currentGutter.length-1)]]);
+}
+
+function autoGrowTextArea() {
+    $("#editor-textarea").height("5px");
+    let needed = $('textarea:first').prop('scrollHeight');
+    $("#editor-textarea").css("height", needed);
 }
 
 function sizeStuff() {

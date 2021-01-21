@@ -73,7 +73,7 @@ button {
 }
 
 #editor {
-    overflow:hidden;
+    overflow:scroll;
 }
 
 #preview {
@@ -110,12 +110,12 @@ button {
 
 #editor-textarea {
     width: 94%;
-    height: 97%;
     box-sizing: border-box;
     background-color:white;
     border:none;
     outline:0;
     resize:none;
+    overflow-y:visible;
 }
 
 #highlighter {
@@ -123,6 +123,17 @@ button {
     opacity:0.5;
     position:absolute;
     width:94%;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+#editor::-webkit-scrollbar {
+    display: none;
+  }
+
+/* Hide scrollbar for IE, Edge and Firefox */
+#editor {
+-ms-overflow-style: none;  /* IE and Edge */
+scrollbar-width: none;  /* Firefox */
 }
 
 
