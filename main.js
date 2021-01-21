@@ -65,8 +65,9 @@ function editorHandling(l) {
 }
 
 function sizeStuff() {
-    
-    $("#highlighter").css("height", );
+    let lineHeight = $(".gutter-number").height();
+    let leftOffset = $("").offset();
+    $("#highlighter").css("height", lineHeight);
 }
 
 function preparePage() {
