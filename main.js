@@ -26,6 +26,7 @@ var placeholderText = "";
 
 
 
+
 var currentGutter;
 
 
