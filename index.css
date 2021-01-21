@@ -73,7 +73,7 @@ button {
 }
 
 #editor {
-    
+    overflow:hidden;
 }
 
 #preview {
@@ -86,20 +86,37 @@ button {
     padding:0;
     margin:0;
     text-align:center;
-    transform:translate(0, -100%);
 }
 
-.grid-container {
-
+#editor-container {
+    height:100%;
+    width:100%;
+    display:flex;
 }
 
-#editor-grid {
-
+#gutter {
+    width:4%;
+    height:97%;
+    display:flex;
+    flex-direction:column;
 }
 
-#preview-grid {
-
+.gutter-number {
+    height:auto;
+    font-family: 'YuseiMagic-Regular';
+    text-align:center;
+    color:grey;
 }
+
+#editor-textarea {
+    width: 94%;
+    height: 97%;
+    box-sizing: border-box;
+    background-color:white;
+    border:none;
+    outline:0;
+}
+
 
 
 
