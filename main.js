@@ -3,7 +3,6 @@ var currentGutter;
 var currentLine; //int (representing the index # of the line in the lines and gutter arrays)
 
 function setGutterArray() {
-    let workingGutter = OG;
     //There will always be the number 1 in the gutter.
     //Remove all elements in the gutter container in HTML file
     //Using the count of lines (gotten from text area scrollHeight / gutter-number height), recursicvely add numbers to to the gutter container in the html, adding the proper class
