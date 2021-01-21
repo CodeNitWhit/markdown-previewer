@@ -74,10 +74,13 @@ button {
 
 #editor {
     overflow:scroll;
+    overflow-x:hidden;
 }
 
 #preview {
-    
+    overflow:scroll;
+    padding-left:10px;
+    overflow-x:hidden;
 }
 
 .tile-title {
@@ -127,15 +130,6 @@ button {
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
-#editor::-webkit-scrollbar {
-    display: none;
-  }
-
-/* Hide scrollbar for IE, Edge and Firefox */
-#editor {
--ms-overflow-style: none;  /* IE and Edge */
-scrollbar-width: none;  /* Firefox */
-}
 
 #editor-textarea::-webkit-scrollbar {
     display: none;

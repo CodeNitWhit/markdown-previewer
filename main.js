@@ -1,3 +1,35 @@
+var placeholderText = "";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var currentGutter;
+
+
+
 $(document).ready(function() {
     preparePage();
     $('#settings-button').click(function() {
@@ -11,16 +43,9 @@ $(document).ready(function() {
         $('#settings-button').css("box-shadow", "none");
     });
     $("#editor-textarea").on('input', (event) => editorHandling());
-    $("#editor-textarea").click((event) => highlighterHandling())
 });
 
 
-
-
-var placeholderText = "bobby-booy\rbilly booooooy";
-var currentGutter;
-var currentLine = 0; //int (representing the index # of the line in the lines and gutter arrays)
-var lastLine = 0;
 
 
 function preparePage() {
@@ -35,12 +60,7 @@ function editorHandling() {
     autoGrowTextArea();
     setGutterArray();
     displayGutter();
-    highlighterHandling();
-}
-
-function highlighterHandling() {
-    fetchHighlightLine();
-    //moveHighlighter();
+    renderMarkdown();
 }
 
 function autoGrowTextArea() {
@@ -86,28 +106,11 @@ function displayGutter() {
     }
 }
 
-function fetchHighlightLine() {
-    let linesData = $("#editor-textarea").val();
-    let lines = linesData.split(/\r?\n/);
-    let cursorIndex = Math.floor($("#editor-textarea")[0].selectionStart) - 1;
-    let i = 0; //Represents which line is to be highlighted
-    let linesItem = lines[i];
-    while (cursorIndex > linesItem.length -1) {
-        //let oldIndex = cursorIndex;
-        cursorIndex -= linesItem.length + 1;
-        //alert(cursorIndex);
-        i += 1;
-        linesItem = lines[i];
-        //alert(linesItem);
-        //alert(linesItem.length);
-        //alert(oldIndex + " - " + linesItem.length + " = " + cursorIndex);
-    }
-    //alert("Cur: " + currentLine);
-    lastLine = currentLine;
-    currentLine = i + 1;
-    alert("Last: " + lastLine + " ... New Cur: " + currentLine);
-}
-
-function moveHighlighter() {
-
+function renderMarkdown() {
+    $("#preview-container").empty();
+    let data = $("#editor-textarea").val();
+    //alert(data);
+    var parsed = marked(data);
+    //alert(parsed);
+    $("#preview-container").html(parsed);
 }
