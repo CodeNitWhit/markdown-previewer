@@ -11,6 +11,7 @@ $(document).ready(function() {
         $('#settings-button').css("box-shadow", "none");
     });
     $("#editor-textarea").on('input', (event) => editorHandling());
+    $("#editor-textarea").click((event) => highlighterHandling())
 });
 
 
@@ -18,7 +19,7 @@ $(document).ready(function() {
 
 var placeholderText = "bobby-booy\rbilly booooooy";
 var currentGutter;
-var currentLine; //int (representing the index # of the line in the lines and gutter arrays)
+var currentLine = 0; //int (representing the index # of the line in the lines and gutter arrays)
 var lastLine = 0;
 
 
@@ -34,13 +35,13 @@ function editorHandling() {
     autoGrowTextArea();
     setGutterArray();
     displayGutter();
-    //highlighterHandling();
+    highlighterHandling();
 }
 
-/*function highlighterHandling() {
-    fetchHighlightHeight();
-    moveHighlighter();
-}*/
+function highlighterHandling() {
+    fetchHighlightLine();
+    //moveHighlighter();
+}
 
 function autoGrowTextArea() {
     $("#editor-textarea").height("5px");
@@ -85,25 +86,28 @@ function displayGutter() {
     }
 }
 
-/*function fetchHighlightHeight() {
-    var linesData = $("#editor-textarea").val();
+function fetchHighlightLine() {
+    let linesData = $("#editor-textarea").val();
     let lines = linesData.split(/\r?\n/);
-    let cursorIndex = Math.floor($("#editor-textarea")[0].selectionStart);
-    var lineI = 0; //Represents which line is to be highlighted
-    let lineFound = false;
-    while(cursorIndex > 0 && !lineFound) {
-        if(cursorIndex > lines[lineI].length) {
-            cursorIndex -= lines[lineI].length;
-            lineI += 1;
-        } else {
-            lineFound = true;
-        }
+    let cursorIndex = Math.floor($("#editor-textarea")[0].selectionStart) - 1;
+    let i = 0; //Represents which line is to be highlighted
+    let linesItem = lines[i];
+    while (cursorIndex > linesItem.length -1) {
+        //let oldIndex = cursorIndex;
+        cursorIndex -= linesItem.length + 1;
+        //alert(cursorIndex);
+        i += 1;
+        linesItem = lines[i];
+        //alert(linesItem);
+        //alert(linesItem.length);
+        //alert(oldIndex + " - " + linesItem.length + " = " + cursorIndex);
     }
+    //alert("Cur: " + currentLine);
     lastLine = currentLine;
-    currentLine = lineI + 1;
-    alert(currentLine);
-}*/
+    currentLine = i + 1;
+    alert("Last: " + lastLine + " ... New Cur: " + currentLine);
+}
 
-/*function moveHighlighter() {
+function moveHighlighter() {
 
-}*/
+}
