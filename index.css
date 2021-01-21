@@ -115,6 +115,7 @@ button {
     background-color:white;
     border:none;
     outline:0;
+    resize:none;
 }
 
 #highlighter {
