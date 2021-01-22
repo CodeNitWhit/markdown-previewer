@@ -4,28 +4,17 @@ var placeholderText = $("<div/>").html(fullRP).text();
 
 var currentGutter;
 
+var placeholderIterator = 0;
+
 
 $(document).ready(function() {
     preparePage();
-    $('#settings-button').click(function() {
-        $("#settings-box").show();
-        $("#container").css("opacity", "0.5");
-        $('#settings-button').css("box-shadow", "2px 2px 50px 10px grey inset");
-    });
     $("#exit-btn").click(function() {
         $("#settings-box").hide();
         $("#container").css("opacity", "1");
         $('#settings-button').css("box-shadow", "none");
     });
     $("#editor-textarea").on('input', (event) => editorHandling());
-    $("#download-button").click(generateDownload());
-    $("#placeholder-setting").change(function() {
-        if ($("#placeholder-setting").is(":checked")) {
-            $("#editor-textarea").val(placeholderText);
-        } else {
-            $("#editor-textarea").val("Start Here...");
-        }
-    });
 });
 
 
@@ -34,6 +23,7 @@ $(document).ready(function() {
 function preparePage() {
     //Getting Footer Menu Ready
     $("#settings-box").hide();
+    $("#copied").hide();
     //Set placeholder text
     $("#editor-textarea").val(placeholderText);
     editorHandling();
@@ -103,3 +93,34 @@ function generateDownload() {
     let fileName = "new.md";
     download(fileName, data);
 }
+
+function copyInput() {
+    $("#editor-textarea").select();
+    document.execCommand("copy");
+    $("#copied").fadeIn(700);
+    $("#copied").fadeOut(700);
+}
+
+function toggleSettings() {
+    $("#settings-box").show();
+    $("#container").css("opacity", "0.5");
+    $('#settings-button').css("box-shadow", "2px 2px 50px 10px grey inset");
+}
+
+function togglePlaceholderSetting() {
+    placeholderIterator += 1;
+    if (placeholderIterator % 2 ==0) {
+        $("#editor-textarea").val(placeholderText);
+        //$("#editor-textarea").val("");
+    } else {
+        $("#editor-textarea").val("Start Here...");
+    }
+    editorHandling();
+}
+
+
+
+
+
+
+

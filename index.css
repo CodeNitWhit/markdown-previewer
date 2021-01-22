@@ -180,6 +180,22 @@ scrollbar-width: none;  /* Firefox */
     font-size:20px;
 }
 
+#copied {
+    height:auto;
+    width:auto;
+    padding:10px;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    background-color:black;
+    border-radius:1%;
+    border-style:none;
+    color:white;
+    font-family: 'YuseiMagic-Regular';
+    font-size:30px;
+}
+
 
 /*--FOOTER--*/
 footer {
