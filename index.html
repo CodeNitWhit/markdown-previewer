@@ -36,8 +36,18 @@
         <button id="exit-btn">X</button>
         <h1 id="setting-title">Settings</h1>
         <form>
-            <label for="placeholder-setting">Example Text:</label>
-            <input type="checkbox" id="placeholder-setting" name="placeholder-setting" onclick="togglePlaceholderSetting()" checked ><br>
+            <br>
+            <label for="name-textarea">
+                Name:
+                <input id="name-textarea" data-gramm_editor="false" autocorrect="false" autocapitalize="none" autocomplete="off" spellcheck="false" wrap="off"></input>
+                <label for="text-area"> .md</label>
+            </label>
+            <br>
+            <br>
+            <label for="placeholder-setting">
+                Example Text:
+                <input type="checkbox" id="placeholder-setting" name="placeholder-setting" onclick="togglePlaceholderSetting()" checked >
+            </label>
         </form>
     </div>
     <div id="copied">Copied to Clipboard!</div>

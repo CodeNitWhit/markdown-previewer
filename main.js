@@ -6,6 +6,8 @@ var currentGutter;
 
 var placeholderIterator = 0;
 
+var downloadIterator = 1;
+
 
 $(document).ready(function() {
     preparePage();

@@ -148,7 +148,7 @@ scrollbar-width: none;  /* Firefox */
 /*--SETTINGS BOX--*/
 
 #settings-box {
-    height:40vh;
+    height:25vh;
     width: 350px;
     position:fixed;
     top: 50%;
@@ -164,6 +164,13 @@ scrollbar-width: none;  /* Firefox */
     flex-direction:column;
     justify-content: space-around;
     align-items: center;
+    text-align:center;
+}
+
+form {
+    height:70%;
+    width:90%;
+    margin-top:5%;
 }
 
 #setting-title {
