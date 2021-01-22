@@ -142,13 +142,10 @@ scrollbar-width: none;  /* Firefox */
 }
 
 
-
-
-
 /*--SETTINGS BOX--*/
 
 #settings-box {
-    height:25vh;
+    height:auto;
     width: 350px;
     position:fixed;
     top: 50%;
@@ -206,6 +203,10 @@ form {
     font-family: 'YuseiMagic-Regular';
     font-size:30px;
     z-index:2;
+}
+
+#download-link {
+    display:none;
 }
 
 

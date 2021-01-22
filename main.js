@@ -125,39 +125,34 @@ function populateNameField() {
     $("#name-textarea").val(downloadName);
 }
 
-
-
-
-
-
-
-
-
-
 function generateDownload() {
+    let text = $("#editor-textarea").val();
     populateNameField();
-    let nameGood = validateName(downloadName);
+    let nameGood = avoidRepeatDownName(downloadName);
+    let tempName;
     if(!nameGood) {
-        tweakName(downloadName);
+        tempName = tweakName(downloadName);
+    } else {
+        tempName = downloadName
     }
-
+    let fileName = tempName + ".md";
     //Use link element (hidden) to set the download attribute
+    $("#download-link").attr("href", "data:text/plain;charset-utf-8," + encodeURIComponent(text));
+    $("#download-link").attr("download", fileName);
+    $("#download-link")[0].click();
+    triggerDownloadedPopup();
+    clearDownloadAttributes();
+    downloadIterator++;
+}
 
-    let data = $("#editor-textarea").val();
-    let fileName = downloadName + ".md";
-    download(fileName, data);
-}/**/
-
-
-
-
-
-
-
+function clearDownloadAttributes() {
+    $("#download-link").attr("href", "");
+    $("#download-link").attr("download", "fileName");
+}
 
 function tweakName() {
-    lastDownName = downloadName;
-    downloadName = downloadName + downloadIterator;
+    let tempName = downloadName + downloadIterator;
+    return tempName;
 }
 
 function saveNewName() {
@@ -202,7 +197,7 @@ function avoidIllegalCharacters(name) {
     if(name.length >= 19) {
         return false;
     } else {
-        let regexTest = /^[\w\-. ]+$/;
+        let regexTest = /^[A-Za-z0-9]+$/;
         let validFilename = regexTest.test(name);
         if(validFilename) {
             return true;
@@ -216,10 +211,6 @@ function avoidRepeatDownName(name) {
     if(name === downloadName) {
         return false;
     } else {
-        if(name === lastDownName) {
-            return false;
-        } else {
-            return true;
-        }
+        return true;
     }
 }
