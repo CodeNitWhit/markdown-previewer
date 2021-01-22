@@ -39,9 +39,11 @@
             <br>
             <label for="name-textarea">
                 Name:
-                <input id="name-textarea" data-gramm_editor="false" autocorrect="false" autocapitalize="none" autocomplete="off" spellcheck="false" wrap="off"></input>
-                <label for="text-area"> .md</label>
+                <input type="text" id="name-textarea" data-gramm_editor="false" autocorrect="false" autocapitalize="none" autocomplete="off" spellcheck="false" wrap="off"></input>
+                .md
             </label>
+            <br>
+            <input type="button" value="Save" onclick="saveNewName()">
             <br>
             <br>
             <label for="placeholder-setting">
@@ -50,7 +52,9 @@
             </label>
         </form>
     </div>
-    <div id="copied">Copied to Clipboard!</div>
+    <div id="copied" class="popup">Copied to Clipboard!</div>
+    <div id="saved" class="popup">New Filename Saved!</div>
+    <div id="downloaded" class="popup">File Saved to Downloads!</div>
 </body>
 <footer>
     <button id="settings-button" class="fas fa-cog footer-icon" onclick="toggleSettings()"></button>
