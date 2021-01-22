@@ -125,7 +125,15 @@ function populateNameField() {
     $("#name-textarea").val(downloadName);
 }
 
-/*
+
+
+
+
+
+
+
+
+
 function generateDownload() {
     populateNameField();
     let nameGood = validateName(downloadName);
@@ -140,6 +148,13 @@ function generateDownload() {
     download(fileName, data);
 }/**/
 
+
+
+
+
+
+
+
 function tweakName() {
     lastDownName = downloadName;
     downloadName = downloadName + downloadIterator;
@@ -150,8 +165,6 @@ function saveNewName() {
     let nameGood = validateName(inputText);
     if(nameGood) {
         downloadName = inputText;
-        //alert(downloadName);
-        //$("#settings-box").hide();
         populateNameField();
         triggerSavedPopup();
     } else {
@@ -180,7 +193,7 @@ function validateName(name) {
             return false;
         }
     } else {
-        alert("Please only use legal characters:\nA-Z, 0-9, _, ., @, -, (, ), ' ");
+        alert("Please only use legal characters:\nA-Z, a-z, 0-9");
         return false;
     }
 }
@@ -210,4 +223,3 @@ function avoidRepeatDownName(name) {
         }
     }
 }
-/**/
