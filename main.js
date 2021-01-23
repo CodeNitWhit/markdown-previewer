@@ -26,12 +26,16 @@ $(document).ready(function() {
         $('#settings-button').css("box-shadow", "none");
     });
     $("#editor-textarea").on('input', (event) => editorHandling());
+    $(window).resize(function() {
+        resizeEditors();
+    });
 });
 
 
 
 /*---------Used once when page first loads------------*/
 function preparePage() {
+    resizeEditors(); 
     populateNameField();
     $("#settings-box").hide();
     $("#copied").hide();
@@ -39,6 +43,31 @@ function preparePage() {
     $("#downloaded").hide();
     $("#editor-textarea").val(placeholderText);
     editorHandling();
+}
+
+function resizeEditors() {
+    if(window.matchMedia('(orientation: landscape)').matches) {
+        resizeEditorsLandscape();
+    } else if(window.matchMedia('(orientation: portrait)').matches) {
+        resizeEditorsPortrait();
+    }
+}
+
+function resizeEditorsLandscape() {
+    let windowSize = $(window).height();
+    let titleSize = $("#title").height();
+    let footerSize = $("#title").height();
+    let editorHeight = windowSize - titleSize - footerSize - 20;
+    $(".tile").height(editorHeight);
+}
+
+function resizeEditorsPortrait() {
+    let windowSize = $(window).height();
+    let titleSize = $("#title").height();
+    let footerSize = $("#title").height();
+    let totalHeight = windowSize - titleSize - footerSize;
+    let eachHeight = (totalHeight/2) - 20;
+    $(".tile").height(eachHeight);
 }
 
 
