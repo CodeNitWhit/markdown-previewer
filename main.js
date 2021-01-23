@@ -56,7 +56,7 @@ function resizeEditors() {
 function resizeEditorsLandscape() {
     let windowSize = $(window).height();
     let titleSize = $("#title").height();
-    let footerSize = $("#title").height();
+    let footerSize = $("#footer").height();
     let editorHeight = windowSize - titleSize - footerSize - 20;
     $(".tile").height(editorHeight);
 }
@@ -64,7 +64,7 @@ function resizeEditorsLandscape() {
 function resizeEditorsPortrait() {
     let windowSize = $(window).height();
     let titleSize = $("#title").height();
-    let footerSize = $("#title").height();
+    let footerSize = $("#footer").height();
     let totalHeight = windowSize - titleSize - footerSize;
     let eachHeight = (totalHeight/2) - 20;
     $(".tile").height(eachHeight);
