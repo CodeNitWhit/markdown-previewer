@@ -24,6 +24,10 @@ button {
 }
 
 /*--TITLE/HEADER--*/
+
+#title-container {
+    height:10vh;
+}
 #title {
     text-align:center;
     color:#d3d6f2;
@@ -31,7 +35,7 @@ button {
     height:7vh;
     margin:0;
     font-family: 'YuseiMagic-Regular';
-    font-size: 35px;
+    font-size: 40px;
 }
 
 /*--BODY--*/
@@ -42,12 +46,12 @@ button {
         justify-content:space-around;
     }
     #editor {
+        height:79vh;
         width: 47vw;
-        height:75vh;
     }
     #preview {
+        height:79vh;
         width: 47vw;
-        height:75vh;
     }
 }
 
@@ -57,15 +61,16 @@ button {
         flex-direction:column;
     }
     #editor {
+        height: 38vh;
         width: 90vw;
-        height:38vh;
         margin:0 auto;
+        margin-bottom: 10px;
     }
     #preview {
+        height: 38vh;
         width: 90vw;
-        height:38vh;
         margin:0 auto;
-        margin-top:2vh;
+        margin-bottom: 10px;
     }
 }
 
@@ -229,5 +234,5 @@ footer {
 
 .footer-icon {
     color: #d3d6f2;
-    font-size: 5vh;
+    font-size: 6vh;
 }
