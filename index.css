@@ -5,6 +5,9 @@
     font-style: normal;
 }
 
+html { height: 100vh; }
+body { height: 100%; }
+
 body {
     background-color:#7b84d1;
 }
@@ -27,6 +30,7 @@ button {
 
 #title-container {
     height:10vh;
+    width:100vw;
 }
 #title {
     text-align:center;
@@ -35,7 +39,7 @@ button {
     height:7vh;
     margin:0;
     font-family: 'YuseiMagic-Regular';
-    font-size: 40px;
+    font-size: 4vh;
 }
 
 /*--BODY--*/
